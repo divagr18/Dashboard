@@ -13,14 +13,14 @@ type InventoryItem = {
   description: string;
   sku: string;
   category: string;
-  price: string;
+  price: number;
   cost_price: number;
   stock_level: number;
   reorder_point: number;
 };
 
 export default function AddProductDialog({ isOpen, onClose, onAdd }: AddProductDialogProps) {
-  const [formData, setFormData] = useState<Omit<InventoryItem, 'id'>>({
+  const [formData, setFormData] = useState({
     name: '',
     description: '',
     sku: '',
@@ -58,7 +58,7 @@ export default function AddProductDialog({ isOpen, onClose, onAdd }: AddProductD
             <X className="h-5 w-5 text-gray-500" />
           </button>
         </div>
-
+        
         <form onSubmit={handleSubmit} className="p-4 space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
