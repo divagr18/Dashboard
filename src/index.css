@@ -1,3 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+body.dark-mode {
+  background-color: #000000; /* True black */
+  color: #ffffff; /* White text */
+}
+
+/* Additional styles for other elements can be added here */
